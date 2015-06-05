@@ -1,0 +1,7 @@
+$Read_IO = (Get-WmiObject Win32_PerfFormattedData_PerfProc_Process).IOReadOperationsPerSec 
+$query_R = $Read_IO | Measure-Object -sum | select sum
+$query_R.sum
+
+$Write_IO = (Get-WmiObject Win32_PerfFormattedData_PerfProc_Process).IOReadOperationsPerSec 
+$query_W = $Write_IO | Measure-Object -sum | select sum
+$query_W.sum
